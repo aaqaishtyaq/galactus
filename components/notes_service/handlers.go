@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/aaqaishtyaq/dvito/src/notes_service/markdown"
+	"github.com/aaqaishtyaq/galactus/src/notes_service/markdown"
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {

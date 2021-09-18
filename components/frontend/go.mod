@@ -1,4 +1,4 @@
-module github.com/aaqaishtyaq/dvito/src/frontend
+module github.com/aaqaishtyaq/galactus/src/frontend
 
 go 1.16
 
