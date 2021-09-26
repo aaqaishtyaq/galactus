@@ -1,0 +1,38 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: code-server-app
+  labels:
+    app: code-server
+spec:
+  containers:
+  - name: code
+    image: ghcr.io/aaqaishtyaq/code:1
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: code-server-service
+spec:
+  selector:
+    app: code-server
+  ports:
+  # Default port used by the image
+  - port: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: code-server-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/code"
+        backend:
+          service:
+            name: code-service
+            port:
+              number: 3000
+---

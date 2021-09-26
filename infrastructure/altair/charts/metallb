@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Install metallb
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/master/manifests/namespace.yaml
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/master/manifests/metallb.yaml
+
+# Wait for pods to come up
+sleep 120
+k apply -f metallb.yaml
