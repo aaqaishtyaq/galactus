@@ -42,3 +42,10 @@ app
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
+
+# Binaries
+frontend/frontend
+hostpath-provisioner/hostpath-provisioner/
+notes-service/notes-service
+workspace-manager/workspace-manager
